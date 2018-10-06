@@ -12,13 +12,30 @@ namespace std {
 
 class Celula {
 private:
-	int estado;
+	bool estado;
+	int vida;
 public:
+
+	/*
+	 * POST:VALORES A VIDA = 0 (INICIA MUERTA) ,ESTADO ES UN BOOL.
+	 */
 	Celula();
 
-	int obtenerEstado();
+	/*
+	 * DEVUELVE BOOL PARA TRABAJAR EN PARCELA , TRUE VIVA FALSE MUERTA
+	 */
+	bool obtenerEstado();
 
+	/*
+	 * RECIBE EL PARAMETRO DE LA PARCELA PARA INICIAR CON LA VIDA QUE DEBE
+	 */
 	void nacer(float coefNacimiento);
+
+	/*
+	 * ESTADO FALSE
+	 * VIDA = 0
+	 */
+	void matar();
 };
 
 } /* namespace std */
