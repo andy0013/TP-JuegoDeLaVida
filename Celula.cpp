@@ -10,16 +10,23 @@
 namespace std {
 
 Celula::Celula() {
-	this->estado = 0;
+	this->estado = false;
+	this->vida = 0;
 
 }
 
 void Celula::nacer(float coefNacimiento){
-	this->estado = 100 * coefNacimiento;
+	this->vida = 100 * coefNacimiento;
+	this->estado = true;
 }
 
-int Celula::obtenerEstado(){
+bool Celula::obtenerEstado(){
 	return this->estado;
+}
+
+void Celula::matar(){
+	this->estado = false;
+	this->vida = 0;
 }
 
 } /* namespace std */
