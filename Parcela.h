@@ -16,16 +16,28 @@ class Parcela {
 		int red,green,blue;
 		float factorDeNacimiento;
 		Celula celula;
-		bool porUsuario;
+
 
 	public:
-		Parcela(float factorNacimiento,bool primeraVez);
 
-		Parcela(float factorNacimiento);
-
-		float celulaDarVida();
-
+		/*
+		 * PRE:Parcela vacia,CREA UN COEFICIENTE CUALQUIERA , HABRIA QUE IMPLEMENTARLO CIN RANDOM , MISMO LOS COLORES.
+		 * POST:Celula muerta.
+		 */
+		Parcela();
+		/*
+		 * PRE:
+		 * POST:Celula muerta.
+		 */
+		void celulaDarVida();
+		/*
+		 * POST:Devuelve el promedio del color para algun nacimiento.
+		 */
 		float obtenerPromedioColor();
+		/*
+		 * POST:Dato para matriz , 34 viva , 44 muerta.
+		 */
+		void obtenerDatoEstadoDeCelula();
 };
 
 } /* namespace std */
