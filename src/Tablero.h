@@ -46,20 +46,24 @@ class tablero {
 		virtual ~tablero();
 
 		/*
+		 * POST:CREA CELULAS "MUERTAS" EN TODA LA MATRIZ.
+		 */
+		void iniciarCelulas();
+
+	
+	private:
+	
+		/*
 		 * POST:CHAR A CADA POSICION DEL TALBLERO.
 		 */
 		void iniciarTablero();
-
-		/*
-		 * POST:CREA CELULAS "MUERTAS" EN TODA LA MATRIZ.
-		 */
-
-		void iniciarCelulas();
-
+	
 		/*
 		 * POST EN LA POSICION PASADA CREA UNA CELULA VIVA.
 		 */
 		void crearCelulas(int fila,int columna);
+
+	
 
 };
 
