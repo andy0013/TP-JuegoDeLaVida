@@ -1,1 +1,24 @@
-Paramore 20 50
+Paramore 2 4
+Paramore 1 2 A
+CrownTheEmpire 2 2
+CrownTheEmpire 2 2 A
+LinkinPark 3 2
+LinkinPark 2 2 A
+Paramore 1 1 150 120 100 0.2 0.5
+Paramore 1 2 120 130 10 0.1 0.7
+Paramore 1 3 90 110 0 0.3 0.6
+Paramore 1 4 100 100 100 0.1 0.1
+Paramore 2 1 50 20 10 0.2 0.2
+Paramore 2 2 160 220 200 1.0 0.5
+Paramore 2 3 160 110 200 0.2 0.5
+Paramore 2 4 0 250 250 0.2 0.5
+CrownTheEmpire 1 1 150 120 100 0.2 0.5
+CrownTheEmpire 1 2 120 130 10 0.1 0.7
+CrownTheEmpire 2 1 144 445 28 0.3 0.9
+CrownTheEmpire 2 2 250 250 0 0.9 0.1
+LinkinPark 1 2 111 156 55 0.1 0.9
+LinkinPark 1 1 145 156 22 0.2 0.9
+LinkinPark 2 1 45 156 33 0.2 0.8
+LinkinPark 2 2 68 156 44 0.3 0.7
+LinkinPark 3 1 90 115 55 0.4 0.6
+LinkinPark 3 2 90 156 66 0.5 0.
