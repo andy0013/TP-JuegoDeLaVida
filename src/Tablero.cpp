@@ -24,7 +24,7 @@ void Tablero::crearCelulas(int fila,int columna){
 
 void Tablero::iniciarCelulas(){
 	int fila,columna;
-	char respuesta;
+	char respuesta='n';
 
 	do{
 		fila = consola.solicitarPosicionDeCelulaFila();
