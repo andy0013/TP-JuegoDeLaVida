@@ -13,6 +13,7 @@ class ListaTableros {
 	private:
 		Tablero* pDeListaAlPrimerTablero;
 	public:
+		ListaTableros();
 		ListaTableros(int filas,int columnas);//parametros para tablero
 		void cargarDatosEnParcela(int fila,int columna,int,int,int,float natalidad,float mortalidad);//parametros para llenar la parcela
 		void cargarDatosEnPortal(int fila,int columna,char tipoDePortal,Parcela* destinoDelPortal);//parametros para llenar el portal
