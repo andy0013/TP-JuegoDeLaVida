@@ -1,0 +1,18 @@
+-hay un tema sensible entre portal.h y parcela.h , con el include porque se incluyen entre ellos y tienen objetos uno del otro, 
+asique si pongo el include abajo del #ifndef no compila, lo descubri de culo.
+
+-cambie los archivos celula, parcela, tablero, y agregue el lista de tableros. leanlos, les agregue un par de metodos y cambie
+las variables q tenia cada uno, creo q ya estan cerca de ser los definitivos.
+
+-hay q hacer el vinculo del lector con la lista, no tengo idea como funciona el lector, pero capaz puede haber un lector
+adentro del objeto lista?, nose
+
+-la parcela de destino de los portales la deje como para que me la pasen por parametro en la lista de tableros.
+
+-hice 2 constructores en lista tableros, se puede directamente pasar al constructor para q arme el primer tablero o
+se puede hacer llamando al metodo "alta final tablero nuevo" o "alta principio tablero nuevo" 
+(nombres propensos a ser cambiados)
+
+-le agregue un par de comentarios asi nomas al codigo, espero q se entienda todo cualqier cosa pregunten x wpp;
+
+return 0;
