@@ -4,8 +4,12 @@
  *  Created on: Oct 24, 2018
  *      Author: ale
  */
-
+#include <iostream>
 #include "ListaTableros.h"
+
+ListaTableros::ListaTableros(){
+	this->pDeListaAlPrimerTablero=NULL;
+}
 
 ListaTableros::ListaTableros(int filas, int columnas){
 	this->pDeListaAlPrimerTablero=new Tablero(filas,columnas);
