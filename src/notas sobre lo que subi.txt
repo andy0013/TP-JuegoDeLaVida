@@ -17,6 +17,9 @@ se puede hacer llamando al metodo "alta final tablero nuevo" o "alta principio t
 
 -todavia no implemente nada de la logica del juego
 
+-inclui el iostream casi siempre q tenia q usar NULL sino no lo detecta, fijense q no haya incluido cosas al pedo sin querer
+como un iostream o un namespace std
+
 -el archivo testeo no sirve, hay que armar un archivo de pruebas;
 
 return 0;
