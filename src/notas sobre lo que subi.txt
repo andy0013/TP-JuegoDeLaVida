@@ -13,6 +13,10 @@ adentro del objeto lista?, nose
 se puede hacer llamando al metodo "alta final tablero nuevo" o "alta principio tablero nuevo" 
 (nombres propensos a ser cambiados)
 
--le agregue un par de comentarios asi nomas al codigo, espero q se entienda todo cualqier cosa pregunten x wpp;
+-le agregue un par de comentarios asi nomas al codigo, espero q se entienda todo cualqier cosa pregunten x wpp
+
+-todavia no implemente nada de la logica del juego
+
+-el archivo testeo no sirve, hay que armar un archivo de pruebas;
 
 return 0;
