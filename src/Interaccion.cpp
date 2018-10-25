@@ -22,8 +22,8 @@ char Interaccion::ingresarCelula(){
 	eleccion = toupper(eleccion);
 	return eleccion;
 }
-/*
- * int Interaccion::solicitarNumeroDeColumnas(){
+
+ /*int Interaccion::solicitarNumeroDeColumnas(){
 	int numeroDeColumnas;
 	cout << "Ingrese numero de columnas del tablero: \n" << endl;
 	cin >> numeroDeColumnas;
@@ -36,7 +36,7 @@ int Interaccion::solicitarNumeroDeFilas(){
 	cin >> numeroDeFilas;
 	return numeroDeFilas;
 }
- */
+*/
 
 int Interaccion::solicitarPosicionDeCelulaFila(){
 	int posicionCelulaFila;

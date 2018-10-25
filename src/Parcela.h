@@ -1,45 +1,46 @@
-/*
- * Parcela.h
- *
- *  Created on: 03/10/2018
- *      Author: andres
- */
-
 #ifndef PARCELA_H_
 #define PARCELA_H_
+
+#include "Portal.h"
 #include "Celula.h"
 
-namespace std {
-
+const int RGB=3;
+class Portal;
 class Parcela {
 	private:
-		int red,green,blue;
-		float factorDeNacimiento;
+		double color; //no lei nada sobre como funciona el color con el bmp, cambienlo de ultima a float, o int nose. y miren el metodo "obtener color de parcela"
+		float factorDeNatalidad, factorDeMortalidad;
 		Celula celula;
-
-
+		Portal portal;
 	public:
-
 		/*
 		 * PRE:Parcela vacia,CREA UN COEFICIENTE CUALQUIERA , HABRIA QUE IMPLEMENTARLO CIN RANDOM , MISMO LOS COLORES.
 		 * POST:Celula muerta.
 		 */
+
+
+		//no hace nada
 		Parcela();
 		/*
 		 * PRE:
 		 * POST:Celula muerta.
 		 */
-		void celulaDarVida();
-		/*
-		 * POST:Devuelve el promedio del color para algun nacimiento.
-		 */
-		float obtenerPromedioColor();
-		/*
-		 * POST:Dato para matriz , 34 viva , 44 muerta.
-		 */
-		void obtenerDatoEstadoDeCelula();
+		void nacerCelula();
+		void matarCelula();
+		//devuelve el color de la parcela.
+		double obtenerColorDeParcela(int,int,int);
+
+		bool obtenerEstadoCelula();
+
+		//vendria a ser como el constructor de la parcela, no se puede poner esta info en el const. porque inicialmente
+		//viene solo la info del tablero, la info de parcela viene mas tarde de a 1.
+		void cargarDatosEnParcela(int,int,int,float natalidad,float mortalidad);
+		void cargarDatosEnPortal(char tipo, Parcela* destino);
+
 };
 
-} /* namespace std */
+
+
+
 
 #endif /* PARCELA_H_ */

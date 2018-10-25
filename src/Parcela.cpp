@@ -1,39 +1,36 @@
-/*
- * Parcela.cpp
- *
- *  Created on: 03/10/2018
- *      Author: andres
- */
-
-#include "Parcela.h"
 #include <iostream>
+#include "Parcela.h"
 
-namespace std {
-
-
-Parcela::Parcela() {
-	red = 255;
-	green = 255;
-	blue = 255;
-	this->factorDeNacimiento = 0.9;
+Parcela::Parcela(){
 }
 
-void Parcela::celulaDarVida(){
-	celula.nacer(this->factorDeNacimiento);
+void Parcela::nacerCelula(){
+	this->celula.nacer(this->factorDeNatalidad,this->color);
+}
+void Parcela::matarCelula(){
+	this->celula.matar(this->factorDeMortalidad);
 }
 
-float Parcela::obtenerPromedioColor(){
-	float promedio;
-	promedio = (this->blue + this->green + this->red)/3;
-	return promedio;
-}
-void Parcela::obtenerDatoEstadoDeCelula(){
-	char estado;
-	if(celula.obtenerEstado()){
-		cout << "37" << endl;
-	}else{
-		cout << "47" << endl;;
-	}
+double Parcela::obtenerColorDeParcela(int rojo,int verde,int azul){
+	return (rojo+verde+azul)/RGB;
 }
 
-} /* namespace std */
+bool Parcela::obtenerEstadoCelula(){
+	return celula.obtenerEstado();
+}
+
+
+//no estoy seguro si hay q pasar cada color o se puede mandar directamente un promedio, despues lo vemos.
+void Parcela::cargarDatosEnParcela(int rojo, int verde, int azul, float natalidad, float mortalidad){
+	this->color=obtenerColorDeParcela(rojo,verde,azul);
+	this->factorDeNatalidad=natalidad;
+	this->factorDeMortalidad=mortalidad;
+}
+
+
+void Parcela::cargarDatosEnPortal(char tipo, Parcela* destino){
+	this->portal.cargarDatosEnPortal(tipo,this,destino);
+}
+
+
+

@@ -1,32 +1,27 @@
-/*
- * Celula.cpp
- *
- *  Created on: 03/10/2018
- *      Author: andres
- */
-
 #include "Celula.h"
 
-namespace std {
 
 Celula::Celula() {
 	this->estado = false;
-	this->vida = 0;
+	this->energia = 0;
 
 }
 
-void Celula::nacer(float coefNacimiento){
-	this->vida = 100 * coefNacimiento;
+void Celula::nacer(float coefNatalidad,double color){
+	this->energia = 100 * coefNatalidad;
 	this->estado = true;
+	this->color=color;
 }
 
 bool Celula::obtenerEstado(){
 	return this->estado;
 }
 
-void Celula::matar(){
-	this->estado = false;
-	this->vida = 0;
+void Celula::matar(float coefMortalidad){
+	this->energia -= this->energia * coefMortalidad;
+	if(this->energia<=0){
+		this->estado=false;
+	}
 }
 
-} /* namespace std */
+

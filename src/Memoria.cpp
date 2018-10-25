@@ -17,7 +17,7 @@ Memoria::Memoria() {
 }
 
 
-void Memoria::obetenerDatoTablero(int iteraciones,str* nombre,int* fila,int* columna){
+void Memoria::obtenerDatoTablero(int iteraciones,string* nombre,int* fila,int* columna){
 	std::ifstream archivo;
 	int contadorDeLinea = 0;
 	archivo.open(this->rutaEntrada.c_str());
@@ -32,7 +32,7 @@ void Memoria::obetenerDatoTablero(int iteraciones,str* nombre,int* fila,int* col
 	archivo.close();
 }
 
-void Memoria::obtenerDatoPortal(int iteraciones,str* nombre,int* fila,int* columna ,char* tipoDePortal){
+void Memoria::obtenerDatoPortal(int iteraciones,string* nombre,int* fila,int* columna ,char* tipoDePortal){
 	std::ifstream archivo;
 	int contadorDeLinea = 0;
 	archivo.open(this->rutaEntrada.c_str());
@@ -48,7 +48,7 @@ void Memoria::obtenerDatoPortal(int iteraciones,str* nombre,int* fila,int* colum
 	archivo.close();
 }
 
-void Memoria::obtenerDatoParcela(int iteraciones,str *nombre,int* fila,int* columna,int* rojo,int* verde,int* azul,float* mortalidad,float* natalidad){
+void Memoria::obtenerDatoParcela(int iteraciones,string*nombre,int* fila,int* columna,int* rojo,int* verde,int* azul,float* mortalidad,float* natalidad){
 	std::ifstream archivo;
 	int contadorDeLinea = 0;
 	archivo.open(this->rutaEntrada.c_str());

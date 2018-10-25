@@ -1,19 +1,12 @@
-/*
- * Celula.h
- *
- *  Created on: 03/10/2018
- *      Author: andres
- */
-
 #ifndef CELULA_H_
 #define CELULA_H_
 
-namespace std {
 
 class Celula {
 private:
 	bool estado;
-	int vida;
+	int energia;
+	double color; //mismo comentario q en color de parcela(ver parcela.h)
 public:
 
 	/*
@@ -29,15 +22,16 @@ public:
 	/*
 	 * RECIBE EL PARAMETRO DE LA PARCELA PARA INICIAR CON LA VIDA QUE DEBE
 	 */
-	void nacer(float coefNacimiento);
+	void nacer(float coefNatalidad,double colorDeNacimiento);
 
 	/*
 	 * ESTADO FALSE
 	 * VIDA = 0
 	 */
-	void matar();
+	void matar(float coefMortalidad);
 };
 
-} /* namespace std */
+
+
 
 #endif /* CELULA_H_ */

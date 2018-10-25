@@ -7,15 +7,12 @@
 
 #ifndef LECTOR_H_
 #define LECTOR_H_
-typedef std::string str;
-#include "Libreta.h"
 #include "Memoria.h"
 
-namespace std {
 
 class Lector {
 	private:
-		str rutaEntrada;
+		std::string rutaEntrada;
 
 
 
@@ -27,26 +24,12 @@ class Lector {
 		 */
 		void leerNotasTablero();
 
-		/*
-		str obtenerNombreTablero();
-
-		int obtenerDatoFila();
-
-		int obtenerDatoFilaPortal();
-
-		int obtenerDatoColumna();
-
-		int obtenerDatoColumnaPortal();
-
-		char obtenerTipoDePortal();
-		*/
-
 	private:
 
 		int interpretarInformacion(char[100]);
 
 };
 
-} /* namespace std */
+ /* namespace std */
 
 #endif /* LECTOR_H_ */

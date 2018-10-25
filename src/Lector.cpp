@@ -8,7 +8,7 @@
 #include <fstream>
 #include "Lector.h"
 #include <iostream>
-namespace std {
+using namespace std;
 
 Lector::Lector(){
 	this->rutaEntrada = "entrada.txt";
@@ -20,7 +20,7 @@ void Lector::leerNotasTablero() {
 	archivo.open(this->rutaEntrada.c_str());
 	int fila,columna,rojo,verde,azul;
 	float mortalidad,natalidad;
-	str nombre;
+	std::string nombre;
 	char tipoDePortal;
 	char linea [100];
 	int numeroDeLineas = 0;
@@ -31,7 +31,7 @@ void Lector::leerNotasTablero() {
 		Memoria datosLeidos;
 		switch(blancos){
 			case 2:
-				datosLeidos.obetenerDatoTablero(numeroDeLineas,&nombre,&fila,&columna);
+				datosLeidos.obtenerDatoTablero(numeroDeLineas,&nombre,&fila,&columna);
 				cout << nombre << fila << columna << endl;
 
 
@@ -50,42 +50,7 @@ void Lector::leerNotasTablero() {
 	}
 	archivo.close();
 }
-/*
 
-str Lector::obtenerNombreTablero(){
-	str nombre = libreta.devolverDatoNombreTablero();
-	return nombre;
-}
-
-int Lector::obtenerDatoFila(){
-	int fila = libreta.devolverDatoFila(false);
-	return fila;
-}
-
-int Lector::obtenerDatoFilaPortal(){
-	int fila;
-	fila = libreta.devolverDatoFila(true);
-	return fila;
-}
-
-int Lector::obtenerDatoColumna(){
-	int columna;
-	columna = libreta.devolverDatoColumna(false);
-	return columna;
-}
-
-int Lector::obtenerDatoColumnaPortal(){
-	int columna;
-	columna = libreta.devolverDatoColumna(true);
-	return columna;
-}
-
-char Lector::obtenerTipoDePortal(){
-	char portal;
-	portal = libreta.DevolverTipoDePortal();
-	return portal;
-}
-*/
 int Lector::interpretarInformacion(char oracion[100]){
 	int blancos =0;
 	int letra = 0;
@@ -97,5 +62,5 @@ int Lector::interpretarInformacion(char oracion[100]){
 	}
 	return blancos;
 }
-}
+
 /* namespace std */

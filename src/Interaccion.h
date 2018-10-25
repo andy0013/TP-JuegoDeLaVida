@@ -8,7 +8,6 @@
 #ifndef INTERACCION_H_
 #define INTERACCION_H_
 
-namespace std {
 
 class Interaccion {
 public:
@@ -25,6 +24,6 @@ public:
 	virtual ~Interaccion();
 };
 
-} /* namespace std */
+ /* namespace std */
 
 #endif /* INTERACCION_H_ */
