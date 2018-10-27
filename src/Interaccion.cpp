@@ -6,12 +6,12 @@
  */
 
 #include "Interaccion.h"
+
 #include <iostream>
 
 using namespace std;
 
 Interaccion::Interaccion() {
-
 
 }
 
@@ -23,39 +23,40 @@ char Interaccion::ingresarCelula(){
 	return eleccion;
 }
 
- /*int Interaccion::solicitarNumeroDeColumnas(){
-	int numeroDeColumnas;
-	cout << "Ingrese numero de columnas del tablero: \n" << endl;
-	cin >> numeroDeColumnas;
-	return numeroDeColumnas;
-}
-
-int Interaccion::solicitarNumeroDeFilas(){
-	int numeroDeFilas;
-	cout << "Ingrese numero de filas del tablero: \n" << endl;
-	cin >> numeroDeFilas;
-	return numeroDeFilas;
-}
-*/
-
-int Interaccion::solicitarPosicionDeCelulaFila(){
+int Interaccion::solicitarPosicionDeCelulaFila(int fila){
 	int posicionCelulaFila;
-	cout << "Ingrese fila para la celula: \n" << endl;
-	cin >> posicionCelulaFila;
-	return (posicionCelulaFila - 1);
+	bool candidatoAceptado;
+	cout << "ADVERTENCIA! NUMERO MAXIMO DE FILA:  " << fila << endl;
+
+	do{
+
+		cout << "Ingrese fila para la celula: \n" << endl;
+		cin >> posicionCelulaFila;
+		candidatoAceptado = validar.estaEnElRango(posicionCelulaFila,fila);
+
+	}while(!candidatoAceptado);
+
+	posicionCelulaFila--;
+	return posicionCelulaFila;
 }
 
-int Interaccion::solicitarPosicionDeCelulaColumna(){
+int Interaccion::solicitarPosicionDeCelulaColumna(int columna){
 	int posicionCelulaColumna;
+	bool candidatoAceptado;
+	cout << "ADVERTENCIA! NUMERO MAXIMO DE COLUMNA:  " << columna << endl;
+	do{
 	cout << "Ingrese columnas para la celula: \n" << endl;
 	cin >> posicionCelulaColumna;
-	return (posicionCelulaColumna - 1);
+	candidatoAceptado = validar.estaEnElRango(posicionCelulaColumna,columna);
+	}while(!candidatoAceptado);
+	posicionCelulaColumna--;
+	return posicionCelulaColumna;
 }
 
 
 
 Interaccion::~Interaccion() {
-	// TODO Auto-generated destructor stub
+
 }
 
  /* namespace std */

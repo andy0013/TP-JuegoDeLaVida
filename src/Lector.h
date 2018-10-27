@@ -7,12 +7,16 @@
 
 #ifndef LECTOR_H_
 #define LECTOR_H_
+typedef std::string str;
 #include "Memoria.h"
+#include "Filtro.h"
 
+namespace std {
 
 class Lector {
 	private:
-		std::string rutaEntrada;
+		str rutaEntrada;
+		Filtro filtro;
 
 
 
@@ -30,6 +34,6 @@ class Lector {
 
 };
 
- /* namespace std */
+} /* namespace std */
 
 #endif /* LECTOR_H_ */

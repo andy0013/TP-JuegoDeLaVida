@@ -1,71 +1,82 @@
-#include "Tablero.h"
 
 #include <iostream>
-const char SI='S';
+#include "Tablero.h"
 using namespace std;
 
 
-Tablero::Tablero(int numFilas,int numColumnas) {
-	this->siguienteTablero=NULL;
+Tablero::Tablero(std::string nombre,int numFilas,int numColumnas) {
+
+	this->nombreTablero = nombre;
+
 	this->celulasVivas = 0;
+
 	this->numeroDeFilas = numFilas;
+
 	this->numeroDeColumnas = numColumnas;
+
 	this->matriz = new Parcela*[this->numeroDeFilas];
 
 	for (int i = 0 ; i < this->numeroDeFilas;i++){
+
 		this->matriz[i] = new Parcela[this->numeroDeColumnas];
 	}
 }
 
+std::string Tablero::obtenerNombreTablero(){
+	return this->nombreTablero;
+}
+
+void Tablero::iniciarParcelas(int fila,int columna,int r,int g,int b,float mort,float nat){
+	this->matriz[fila][columna].cargarDatos(r,g,b,mort,nat);
+}
+
 void Tablero::crearCelulas(int fila,int columna){
 
-	this->matriz[fila][columna].nacerCelula();
+	this->matriz[fila][columna].celulaDarVida();
+}
+
+void Tablero::devolverDatosParcela(int fila,int columna){
+	this->matriz[fila][columna].imprimeDatosDeColores();
 }
 
 void Tablero::iniciarCelulas(){
 	int fila,columna;
-	char respuesta='n';
+
+	char respuesta;
 
 	do{
-		fila = consola.solicitarPosicionDeCelulaFila();
-		columna = consola.solicitarPosicionDeCelulaColumna();
+		fila = consola.solicitarPosicionDeCelulaFila(this->numeroDeFilas);
+
+		columna = consola.solicitarPosicionDeCelulaColumna(this->numeroDeColumnas);
+
 		this->crearCelulas(fila,columna);
+
 		this->celulasVivas++;
+
 		respuesta = consola.ingresarCelula();
-	}while(respuesta == SI);
+
+	}while(respuesta == 'S');
 }
 
-void Tablero::mostrarTableroDeJuego(){// esta no sirve para el tp, capaz hacer algo q imprima info pero el tablero no
+void Tablero::mostrarTableroDeJuego(){
 	for(int i = 0 ; i < this->numeroDeFilas ; i++ ){
 
 		for(int j = 0 ; j < this->numeroDeColumnas ; j++ ){
-			cout << this->matriz[i][j].obtenerEstadoCelula();  //esto claramenten no sirve, es solo para probar
+
+			cout << this->matriz[i][j].obtenerChar();
 		}
 	cout << endl;
 	}
 }
 
-void Tablero::actualizarInfoParcela(int fila,int columna,int rojo,int verde,int azul,float natalidad,float mortalidad){
-	this->matriz[fila][columna].cargarDatosEnParcela(rojo,verde,azul,natalidad,mortalidad);
-}
-
-void Tablero::actualizarInfoPortal(int fila,int columna,char tipoDePortal,Parcela* destinoDelPortal){
-	this->matriz[fila][columna].cargarDatosEnPortal(tipoDePortal,destinoDelPortal);
-}
-Tablero* Tablero::devolverSiguienteTablero(){
-	return this->siguienteTablero;
-}
-void Tablero::establecerComoSiguienteTablero(Tablero* siguiente){
-	this->siguienteTablero=siguiente;
-}
-
-
 Tablero::~Tablero() {
-
 	for(int i = 0 ; i < this->numeroDeFilas ; i++ ){
+
 			delete [] this->matriz[i];
 	}
+
 	delete [] this->matriz;
 }
+
 
 

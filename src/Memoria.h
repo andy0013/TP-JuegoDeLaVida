@@ -9,11 +9,13 @@
 #define SRC_MEMORIA_H_
 
 #include <string>
+typedef std::string str;
+
 
 
 class Memoria {
 	private:
-		std::string rutaEntrada;
+		str rutaEntrada;
 	public:
 		Memoria();
 
@@ -21,11 +23,11 @@ class Memoria {
 		//Modifica los punteros de lector(En lector , si ven despues de cuando se llama esta funcion) estan pasados
 		//como direcciones de memoria obtiene los datos , luego de mandarlos al "constructor" los pierde.
 
-		void obtenerDatoTablero(int iteraciones,std::string *nombre,int *fila,int *columna);
+		void obtenerDatoTablero(int iteraciones,str *nombre,int *fila,int *columna);
 
-		void obtenerDatoPortal(int iteraciones,std::string *nombre,int *fila,int *columna,char *tipoDePortal);
+		void obtenerDatoPortal(int iteraciones,str *nombre,int *fila,int *columna,char *tipoDePortal);
 
-		void obtenerDatoParcela(int iteraciones,std::string *nombre,int* fila,int* columna,int* rojo,int* verde,int* azul,float* mortalidad,float* natalidad);
+		void obtenerDatoParcela(int iteraciones,str *nombre,int* fila,int* columna,int* rojo,int* verde,int* azul,float* mortalidad,float* natalidad);
 
 };
 

@@ -7,23 +7,26 @@
 
 #ifndef INTERACCION_H_
 #define INTERACCION_H_
-
+#include "Validador.h"
+namespace std {
 
 class Interaccion {
+private:
+
+	Validador validar;
+
 public:
 	Interaccion();
 
 	char ingresarCelula();
 
-	int solicitarPosicionDeCelulaFila();
+	int solicitarPosicionDeCelulaFila(int fila);
 
-	int solicitarPosicionDeCelulaColumna();
-
-	int solicitarNumeroDeTableros();
+	int solicitarPosicionDeCelulaColumna(int columna);
 
 	virtual ~Interaccion();
 };
 
- /* namespace std */
+} /* namespace std */
 
 #endif /* INTERACCION_H_ */

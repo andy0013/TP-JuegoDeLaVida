@@ -1,12 +1,12 @@
 #ifndef CELULA_H_
 #define CELULA_H_
 
+namespace std {
 
 class Celula {
 private:
 	bool estado;
-	int energia;
-	double color; //mismo comentario q en color de parcela(ver parcela.h)
+	int vida;
 public:
 
 	/*
@@ -22,15 +22,16 @@ public:
 	/*
 	 * RECIBE EL PARAMETRO DE LA PARCELA PARA INICIAR CON LA VIDA QUE DEBE
 	 */
-	void nacer(float coefNatalidad,double colorDeNacimiento);
+	void nacer(float coefNacimiento);
 
 	/*
 	 * ESTADO FALSE
 	 * VIDA = 0
 	 */
-	void matar(float coefMortalidad);
+	void matar();
 };
 
+} /* namespace std */
 
 
 

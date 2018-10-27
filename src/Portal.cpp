@@ -7,24 +7,21 @@
 
 #include <iostream>
 #include "Portal.h"
+const char ORIGEN='O';
+const char DESTINO='D';
+using namespace std;
 
-Portal::Portal(){
-	this->parcelaOrigen=NULL;
-	this->parcelaDestino=NULL;
-}
-
-void Portal::cargarDatosEnPortal(char tipo,Parcela* origenDelPortal,Parcela* destinoDelPortal){
+Portal::Portal(char tipo,Parcela* destinoDelPortal,Parcela* origenDelPortal){
 	this->tipoDePortal=tipo;
 	this->parcelaDestino=destinoDelPortal;
 	this->parcelaOrigen=origenDelPortal;
 }
-
 void Portal::matarCelula(char puntoDeReferencia){
 	if(puntoDeReferencia==ORIGEN){
-		this->parcelaOrigen->matarCelula();
+		this->parcelaOrigen->celulaMatar();
 	}
 	else if(puntoDeReferencia==DESTINO){
-		this->parcelaDestino->matarCelula();
+		this->parcelaDestino->celulaMatar();
 	}
 	else{
 		throw;
@@ -32,10 +29,10 @@ void Portal::matarCelula(char puntoDeReferencia){
 }
 void Portal::nacerCelula(char puntoDeReferencia){
 	if(puntoDeReferencia==ORIGEN){
-		this->parcelaOrigen->nacerCelula();
+		this->parcelaOrigen->celulaDarVida();
 	}
 	else if(puntoDeReferencia==DESTINO){
-		this->parcelaDestino->nacerCelula();
+		this->parcelaDestino->celulaDarVida();
 	}
 	else{
 		throw;

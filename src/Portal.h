@@ -5,23 +5,19 @@
  *      Author: ale
  */
 
-#include "Parcela.h"
 #ifndef PORTAL_H_
 #define PORTAL_H_
-const char ORIGEN='O';
-const char DESTINO='D';
-class Parcela;
+#include "Parcela.h"
 /*
- * falta poner lo de los tipos de portal q hacen, o algun comentario
+ * falta poner lo de los tipos
  */
 class Portal{
 private:
 	char tipoDePortal;
-	Parcela* parcelaOrigen;
 	Parcela* parcelaDestino;
+	Parcela* parcelaOrigen;
 public:
-	Portal();
-	void cargarDatosEnPortal(char tipoDePortal,Parcela* parcelaOrigenDelPortal, Parcela* parcelaDestinoDelPortal);
+	Portal(char tipoDePortal,Parcela* parcelaDestinoDelPortal,Parcela* parcelaOrigenDelPortal);
 	void nacerCelula(char puntoDeReferencia);
 	void matarCelula(char puntoDeReferencia);
 };
