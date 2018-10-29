@@ -4,7 +4,7 @@
 using namespace std;
 
 
-tablero::tablero(std::string nombre,int numFilas,int numColumnas) {
+Tablero::Tablero(std::string nombre,int numFilas,int numColumnas) {
 
 	this->nombreTablero = nombre;
 
@@ -22,24 +22,24 @@ tablero::tablero(std::string nombre,int numFilas,int numColumnas) {
 	}
 }
 
-std::string tablero::obtenerNombreTablero(){
+std::string Tablero::obtenerNombreTablero(){
 	return this->nombreTablero;
 }
 
-void tablero::iniciarParcelas(int fila,int columna,int r,int g,int b,float mort,float nat){
+void Tablero::iniciarParcelas(int fila,int columna,int r,int g,int b,float mort,float nat){
 	this->matriz[fila][columna].cargarDatos(r,g,b,mort,nat);
 }
 
-void tablero::crearCelulas(int fila,int columna){
+void Tablero::crearCelulas(int fila,int columna){
 
 	this->matriz[fila][columna].celulaDarVida();
 }
 
-void tablero::devolverDatosParcela(int fila,int columna){
+void Tablero::devolverDatosParcela(int fila,int columna){
 	this->matriz[fila][columna].yafu();
 }
 
-void tablero::iniciarCelulas(){
+void Tablero::iniciarCelulas(){
 	int fila,columna;
 
 	char respuesta;
@@ -58,7 +58,7 @@ void tablero::iniciarCelulas(){
 	}while(respuesta == 'S');
 }
 
-void tablero::mostrarTableroDeJuego(){
+void Tablero::mostrarTableroDeJuego(){
 	for(int i = 0 ; i < this->numeroDeFilas ; i++ ){
 
 		for(int j = 0 ; j < this->numeroDeColumnas ; j++ ){
@@ -69,8 +69,8 @@ void tablero::mostrarTableroDeJuego(){
 	}
 }
 
-tablero::~tablero() {
-	for(int i = 0 ; i < this->numeroDeFilas ; i++ ){
+Tablero::~Tablero() {
+	for(int i = 0 ; i <= this->numeroDeFilas ; i++ ){
 
 			delete [] this->matriz[i];
 	}

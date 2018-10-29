@@ -27,15 +27,11 @@ int Interaccion::solicitarPosicionDeCelulaFila(int fila){
 	int posicionCelulaFila;
 	bool candidatoAceptado;
 	cout << "ADVERTENCIA! NUMERO MAXIMO DE FILA:  " << fila << endl;
-
 	do{
-
-		cout << "Ingrese fila para la celula: \n" << endl;
-		cin >> posicionCelulaFila;
-		candidatoAceptado = validar.estaEnElRango(posicionCelulaFila,fila);
-
+	cout << "Ingrese fila para la celula: \n" << endl;
+	cin >> posicionCelulaFila;
+	candidatoAceptado = validar.estaEnElRango(posicionCelulaFila,fila);
 	}while(!candidatoAceptado);
-
 	posicionCelulaFila--;
 	return posicionCelulaFila;
 }

@@ -5,18 +5,18 @@ namespace std {
 
 
 Parcela::Parcela() {
-	this->red = NULL;
-	this->green = NULL;
-	this->blue = NULL;
-	this->factorDeNacimiento = NULL;
-	this->factorDeMortalidad = NULL;
+	this->red = 0;
+	this->green = 0;
+	this->blue = 0;
+	this->factorDeNacimiento = 0;
+	this->factorDeMortalidad = 0;
 }
 
 void Parcela::celulaDarVida(){
 	this->celula.nacer(this->factorDeNacimiento);
 }
 
-void Parcela::imprimeDatosDeColores(){
+void Parcela::yafu(){
 	cout << this->blue << endl;
 	cout << this->red << endl;
 	cout << this->green << endl;

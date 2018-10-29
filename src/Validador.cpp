@@ -19,6 +19,7 @@ bool Validador::estaEnElRango(int candidato,int limite){
 		this->esValida = true;
 	}else{
 		this->esValida = false;
+		throw std::invalid_argument("Fuera del limite");
 	}
 	return this->esValida;
 }

@@ -25,7 +25,7 @@ public:
 
 	void agregarTablero(std::string nombre,int fila,int columna);
 
-	void iniciarTableros();
+	void iniciarTableros(std::string nombre);
 
 	void mostrarTableros();
 
@@ -35,7 +35,7 @@ public:
 
 private:
 
-	void buscarTableroAdecuado(std::string nombreDelTablero);
+	Tablero* buscarTableroAdecuado(std::string nombreDelTablero);
 };
 
 

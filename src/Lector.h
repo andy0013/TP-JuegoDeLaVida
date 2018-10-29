@@ -10,6 +10,8 @@
 typedef std::string str;
 #include "Memoria.h"
 #include "Filtro.h"
+#include "Lista.h"
+#include "Tablero.h"
 
 namespace std {
 
@@ -17,6 +19,7 @@ class Lector {
 	private:
 		str rutaEntrada;
 		Filtro filtro;
+
 
 
 

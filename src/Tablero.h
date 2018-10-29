@@ -9,7 +9,7 @@
 using namespace std;
 
 
-class tablero {
+class Tablero {
 	private:
 		std::string nombreTablero;
 		Parcela** matriz;
@@ -21,7 +21,7 @@ class tablero {
 		 *
 		 *
 		 */
-		tablero(std::string nombreTablero,int numFilas,int numColumnas);
+		Tablero(std::string nombreTablero,int numFilas,int numColumnas);
 
 		std::string obtenerNombreTablero();
 
@@ -46,7 +46,7 @@ class tablero {
 		/*
 		 *
 		 */
-		~tablero();
+		~Tablero();
 
 		/*
 		 * POST:CREA CELULAS "MUERTAS" EN TODA LA MATRIZ.

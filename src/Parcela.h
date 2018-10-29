@@ -22,7 +22,7 @@ class Parcela {
 		 */
 		void celulaDarVida();
 
-		void imprimeDatosDeColores();
+		void yafu();
 
 		/*
 		 *

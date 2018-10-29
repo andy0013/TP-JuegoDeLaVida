@@ -35,7 +35,7 @@ void Lector::leerNotasTablero() {
 				datosLeidos.obtenerDatoTablero(numeroDeLineas,&nombre,&fila,&columna);
 
 				this->filtro.agregarTablero(nombre,fila,columna);
-
+				this->filtro.iniciarTableros(nombre);
 			}
 				break;
 			case 3:{
@@ -46,17 +46,13 @@ void Lector::leerNotasTablero() {
 
 			case 7:{
 				datosLeidos.obtenerDatoParcela(numeroDeLineas,&nombre,&fila,&columna,&rojo,&verde,&azul,&mortalidad,&natalidad);
-				this->filtro.cargarDatosEnParcela(nombre,fila,columna,rojo,verde,azul,natalidad,mortalidad);
+				this->filtro.cargarDatosEnParcela(nombre,(fila-1),(columna-1),rojo,verde,azul,natalidad,mortalidad);
 			}
 				break;
 		}
 		numeroDeLineas++;
 	}
-
-
 	archivo.close();
-
-	this->filtro.iniciarTableros();
 	this->filtro.mostrarTableros();
 }
 

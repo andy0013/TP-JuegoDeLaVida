@@ -21,12 +21,9 @@ void Filtro::agregarTablero(std::string nombre,int fila,int columna){
 }
 
 
-void Filtro::iniciarTableros(){
-	this->listaDeTablero.iniciarCursor();
-	while(this->listaDeTablero.avanzarCursor()){
-		Tablero* actual = this->listaDeTablero.obtenerCursor();
-		actual->iniciarCelulas();
-	}
+void Filtro::iniciarTableros(std::string nombre){
+	Tablero* nombreCorrecto = buscarTableroAdecuado(nombre);
+	nombreCorrecto->iniciarCelulas();
 }
 
 void Filtro::mostrarTableros(){
@@ -40,25 +37,29 @@ void Filtro::mostrarTableros(){
 }
 
 void Filtro::cargarDatosEnParcela(std::string nombre,int fila,int columna,int rojo,int verde,int azul, float natalidad, float mortalidad){
-	this->tableroActual->iniciarParcelas(fila,columna,rojo,verde,azul,natalidad,mortalidad);
+	Tablero* nombreCorrecto = buscarTableroAdecuado(nombre);
+	nombreCorrecto->iniciarParcelas(fila,columna,rojo,verde,azul,natalidad,mortalidad);
+
 }
+
 
 Filtro::~Filtro(){
 	this->listaDeTablero.iniciarCursor();
 	while(this->listaDeTablero.avanzarCursor()){
 		delete this->listaDeTablero.obtenerCursor();
 	}
-	delete this->listaDeTablero;
 	delete this->tableroActual;
 }
 
-void Filtro::buscarTableroAdecuado(std::string nombreDelTablero){
-	this->listaDeTablero.iniciarCursor();;
-	while(this->listaDeTablero.avanzarCursor()){
-		Tablero* actual = this->listaDeTablero.obtenerCursor();
+Tablero* Filtro::buscarTableroAdecuado(std::string nombreDelTablero){
+	bool noEncontrado = true;
+	Tablero* actual;
+	this->listaDeTablero.iniciarCursor();
+	while(this->listaDeTablero.avanzarCursor() && noEncontrado){
+		actual = this->listaDeTablero.obtenerCursor();
 		std::string nombreCandidato = actual->obtenerNombreTablero();
 		if(nombreCandidato == nombreDelTablero){
-			this->tableroActual = actual;
+			noEncontrado = false;
 		}
-	}
+	}return actual;
 }
