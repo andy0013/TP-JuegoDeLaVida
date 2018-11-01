@@ -62,7 +62,7 @@ void Tablero::iniciarCelulas(){
 
 		this->crearCelulas(fila,columna);
 
-		this->cantidadCelulasIniciales++;
+		this->cantidadCelulasIniciales;
 
 		respuesta = consola.ingresarCelula();
 
@@ -75,21 +75,8 @@ void Tablero::crearCelulas(int fila,int columna){
 	this->matriz[fila][columna].celulaDarVidaPrimerTurno();
 }
 
-int Tablero::obtenerFilasTablero(){
-
-	return numeroDeFilas;
-
-}
-
-int Tablero::obtenerColumnasTablero(){
-
-	return numeroDeColumnas;
-
-}
-
-Parcela** Tablero::obtenerMatrizDelTablero(){
-
-	return this->matriz;
+unsigned int Tablero::obtenerCelulasVivasIniciales(){
+	return this->cantidadCelulasIniciales;
 }
 
 
@@ -104,9 +91,7 @@ Tablero::~Tablero() {
 
 
 
-unsigned int Tablero::obtenerCelulasVivasIniciales(){
-    return this->cantidadCelulasIniciales;
-}
+
 
 
 

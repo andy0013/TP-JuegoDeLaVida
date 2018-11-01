@@ -8,18 +8,25 @@
 #include <iostream>
 #include "ControlJuego.h"
 #include "Tablero.h"
-#include "Contador.h"
 #include "Lista.h"
 using namespace std;
 typedef std::string palabra;
 
 int main(){
-	ControlJuego jugar;
-	jugar.iniciarTableros();
-	jugar.mostrarTablero();
-	jugar.informacionTablero();
-	jugar.informacionTablero();
-	jugar.informacionTablero();
-	return 0;
+    Contador contador;
+    Lector lector;
+    Lista<Tablero> listaTableros = lector.leerNotasTablero();
+
+    listaTableros.iniciarCursor();
+        while (listaTableros.avanzarCursor()){
+            int celulasVivas = contador.contarCelulasVivas(listaTableros.obtenerCursor());
+
+            string nombreTablero = listaTableros.obtenerCursor().obtenerNombreTablero();
+
+            cout << "celulas vivas en el tablero" << nombreTablero << celulasVivas << endl;
+
+        }
+
+
 }
 

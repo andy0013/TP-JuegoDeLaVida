@@ -50,7 +50,7 @@ void Parcela::cargarDatos(int red ,int green ,int blue ,float coeficienteDeMorta
 
 
 
-bool Parcela::obtenerEstadoDeCelula(){
+bool Parcela::obtenerDatoEstadoDeCelula(){
 
 	return celula.obtenerEstado();
 }
