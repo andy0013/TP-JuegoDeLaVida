@@ -21,6 +21,12 @@ void CreadorDeLista::cargarDatosEnParcela(std::string nombre,int fila,int column
 	nombreCorrecto->iniciarParcelas(fila,columna,rojo,verde,azul,natalidad,mortalidad);
 }
 
+CreadorDeLista::~CreadorDeLista(){
+	unsigned int cantidadDeTablero = this->listaDeTablero.contarElementos();
+	for(unsigned int tablero = 0;tablero < cantidadDeTablero;tablero++){
+		this->listaDeTablero.remover(tablero);
+	}
+}
 
 Lista<Tablero*>* CreadorDeLista::obtenerListaCreada(){
 	return &this->listaDeTablero;
@@ -38,12 +44,4 @@ Tablero* CreadorDeLista::buscarTableroAdecuado(std::string nombreDelTablero){
 		}
 	}
 	return tableroActual;
-}
-
-CreadorDeLista::~CreadorDeLista(){
-	unsigned int cantidadDeTablero = this->listaDeTablero.contarElementos();
-	for(unsigned int tablero = 0;tablero < cantidadDeTablero;tablero++){
-		this->listaDeTablero.remover(tablero);
-	}
-
 }

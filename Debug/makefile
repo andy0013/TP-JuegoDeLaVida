@@ -38,19 +38,19 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: Copy\ of\ Juegodelavida
+all: Juegodelavida
 
 # Tool invocations
-Copy\ of\ Juegodelavida: $(OBJS) $(USER_OBJS)
+Juegodelavida: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C++ Linker'
-	g++  -o "Copy of Juegodelavida" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++  -o "Juegodelavida" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(CC_DEPS)$(C++_DEPS)$(EXECUTABLES)$(C_UPPER_DEPS)$(CXX_DEPS)$(OBJS)$(CPP_DEPS)$(C_DEPS) "Copy of Juegodelavida"
+	-$(RM) $(CC_DEPS)$(C++_DEPS)$(EXECUTABLES)$(C_UPPER_DEPS)$(CXX_DEPS)$(OBJS)$(CPP_DEPS)$(C_DEPS) Juegodelavida
 	-@echo ' '
 
 .PHONY: all clean dependents

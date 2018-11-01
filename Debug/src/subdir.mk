@@ -11,7 +11,6 @@ CPP_SRCS += \
 ../src/Interaccion.cpp \
 ../src/Lector.cpp \
 ../src/Memoria.cpp \
-../src/ModificadorDeTablero.cpp \
 ../src/Parcela.cpp \
 ../src/Tablero.cpp \
 ../src/Validador.cpp \
@@ -25,7 +24,6 @@ OBJS += \
 ./src/Interaccion.o \
 ./src/Lector.o \
 ./src/Memoria.o \
-./src/ModificadorDeTablero.o \
 ./src/Parcela.o \
 ./src/Tablero.o \
 ./src/Validador.o \
@@ -39,7 +37,6 @@ CPP_DEPS += \
 ./src/Interaccion.d \
 ./src/Lector.d \
 ./src/Memoria.d \
-./src/ModificadorDeTablero.d \
 ./src/Parcela.d \
 ./src/Tablero.d \
 ./src/Validador.d \

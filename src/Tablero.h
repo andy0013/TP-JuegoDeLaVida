@@ -9,8 +9,8 @@
 #define TABLERO_H_
 #include "iostream"
 #include "Interaccion.h"
-#include "Parcela.h"
 #include "Celula.h"
+#include "Parcela.h"
 #include <string>
 
 
@@ -20,9 +20,8 @@ private:
 	std::string nombreTablero;
 	Parcela** matriz;
 	int numeroDeFilas, numeroDeColumnas;
-	unsigned int cantidadCelulasIniciales;
 	Interaccion consola;
-
+	unsigned int cantidadCelulasIniciales;
 public:
 	/*
 	 * Pre: Tiene que eistir un archivo del cual leer sus datos.
@@ -46,28 +45,16 @@ public:
 	void iniciarParcelas(int fila, int columna, int red, int grenn, int blue, float coeficienteDeNatalidad, float coeficienteDeMortalidad);
 	/*
 	 * Pre: Tienen que existir 1 parcela en cada posicion del tablero.
-	 * Post: Llama al metodo crarCelulas y le pasa como  parametro los valores para fila y columna obtenidos a traves de consola.
+	 * Post: Crea una celula muerta (0 de energia) en cada parcela dentro de cada posicion del tablero.
 	 */
 	void iniciarCelulas();
-	/*
-	 * Pre:
-	 * Post: Devuelve numeroDeColumnas del tablero.
-	 */
-	int obtenerFilasTablero();
-	/*
-	 * Pre:
-	 * Post: Devuelve numeroDeFilas del tablero.
-	 */
-	int obtenerColumnasTablero();
+
+	unsigned int obtenerCelulasVivasIniciales();
 	/*
 	 * Pre: Tablero creado.
 	 * post:
 	 */
 	~Tablero();
-
-	Parcela** obtenerMatrizDelTablero();
-
-	unsigned int obtenerCelulasVivasIniciales();
 
 private:
 	/*

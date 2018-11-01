@@ -13,11 +13,6 @@ using namespace std;
 ControlJuego::ControlJuego() {
 	this->tablerosJuego = lector.leerNotasTablero();
 	this->turnos = 0;
-	this->contadorDeDatos = new Contador*[this->tablerosJuego->contarElementos()];
-	for(unsigned int tableroActual=1;tableroActual<this->tablerosJuego->contarElementos();tableroActual++){
-		Tablero* tableroLeido = this->tablerosJuego->obtener(tableroActual);
-		this->contadorDeDatos[tableroActual] = new Contador(tableroLeido);
-	}
 }
 
 void ControlJuego::iniciarTableros(){
@@ -41,21 +36,6 @@ void ControlJuego::mostrarTablero(){
 	}
 }
 
-void ControlJuego::actualizarTablero(){
-	//this->contadorDeDatos.
-}
-
-void ControlJuego::informacionTablero(){
-	int cantidadDeElementos = this->tablerosJuego->contarElementos();
-	for(int tableros = 0;tableros < cantidadDeElementos ; tableros++){
-		int celvi = this->contadorDeDatos[tableros]->contarCelulasVivas();
-		cout << celvi;
-	}
-}
-
-ControlJuego::~ControlJuego(){
-	delete [] this->contadorDeDatos;
-}
 
 
 

@@ -45,7 +45,7 @@ public:
 	 * Pre:
 	 * Post:
 	 */
-	bool obtenerEstadoDeCelula();
+	bool obtenerDatoEstadoDeCelula();
 	/*
 	 * Pre:
 	 * Post:
