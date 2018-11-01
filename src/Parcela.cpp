@@ -1,47 +1,60 @@
+/*
+ * Parcela.cpp
+ *
+ *  Created on: 31 oct. 2018
+ *      Author: leandro
+ */
 #include "Parcela.h"
-#include <iostream>
+#include "iostream"
+using namespace std;
 
-namespace std {
+Parcela::Parcela(){
 
-
-Parcela::Parcela() {
-	this->red = 0;
-	this->green = 0;
 	this->blue = 0;
-	this->factorDeNacimiento = 0;
-	this->factorDeMortalidad = 0;
+
+	this->red = 0;
+
+	this->green = 0;
+
+	this->coeficienteDeNatalidad = 0;
+
+	this->coeficienteDeMortalidad = 0;
+
+
 }
+
 
 void Parcela::celulaDarVida(){
-	this->celula.nacer(this->factorDeNacimiento);
+	this->celula.nacer(this->coeficienteDeNatalidad);
 }
 
-void Parcela::yafu(){
-	cout << this->blue << endl;
-	cout << this->red << endl;
-	cout << this->green << endl;
+
+void Parcela::celulaDarVidaPrimerTurno(){
+	this->celula.nacerPrimerTurno(this->coeficienteDeNatalidad, this->red, this->green, this->blue);
+
 }
 
-void Parcela::cargarDatos(int red,int green,int blue,float natalidad,float mortalidad){
+
+
+
+
+void Parcela::cargarDatos(int red ,int green ,int blue ,float coeficienteDeMortalidad ,float coeficienteDeNatalidad) {
 	this->red = red;
 	this->blue = blue;
 	this->green = green;
-	this->factorDeNacimiento = natalidad;
-	this->factorDeMortalidad = mortalidad;
+	this->coeficienteDeNatalidad = coeficienteDeNatalidad;
+	this->coeficienteDeMortalidad = coeficienteDeMortalidad;
+
+
 }
 
-/*float Parcela::obtenerPromedioColor(){
-	float promedio;
-	promedio = (this->blue + this->green + this->red)/3;
-	return promedio;
-}*/
-/*void Parcela::obtenerDatoEstadoDeCelula(){
-	if(celula.obtenerEstado()){
-		cout << "37" << endl;
-	}else{
-		cout << "47" << endl;;
-	}
-}*/
+
+
+bool Parcela::obtenerEstadoDeCelula(){
+
+	return celula.obtenerEstado();
+}
+
 
 char Parcela::obtenerChar(){
 	char valor;
@@ -54,7 +67,16 @@ char Parcela::obtenerChar(){
 	return valor;
 }
 
-} /* namespace std */
+
+
+
+
+
+
+
+
+
+
 
 
 

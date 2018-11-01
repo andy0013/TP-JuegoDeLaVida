@@ -9,34 +9,38 @@
 #define LECTOR_H_
 typedef std::string str;
 #include "Memoria.h"
-#include "Filtro.h"
+#include "CreadorDeLista.h"
 #include "Lista.h"
 #include "Tablero.h"
 
-namespace std {
+
 
 class Lector {
 	private:
 		str rutaEntrada;
-		Filtro filtro;
-
-
-
+		CreadorDeLista creador;
 
 	public:
-		Lector();
 
 		/*
-		 * POST : lee el tablero y guarda los datos de las lineas mediante la clase memoria.
+		 * POST: inicializa la ruta de lectura del archivo.
 		 */
-		void leerNotasTablero();
+		Lector();
+
+		/*PRE: rutaDeLectura inicializada.
+		 * POST : devuelve la lista con los tableros leidos , y sus parcelas iniciadas con los datos leidos.
+		 */
+		Lista<Tablero*>* leerNotasTablero();
 
 	private:
 
-		int interpretarInformacion(char[100]);
+		/* PRE: recibe una linea del archivo de texto , formato vector.
+		 * POST: revuelve la cantidad de blancos en la linea leida.
+		 */
+
+		int cantidadDeBlancos(char[100]);
 
 };
 
-} /* namespace std */
 
 #endif /* LECTOR_H_ */

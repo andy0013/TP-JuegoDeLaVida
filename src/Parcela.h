@@ -1,49 +1,60 @@
+/*
+ * Parcela.h
+ *
+ *  Created on: 31 oct. 2018
+ *      Author: leandro
+ */
+
 #ifndef PARCELA_H_
 #define PARCELA_H_
-
 #include "Celula.h"
 
-namespace std {
+class Parcela{
 
-class Parcela {
-	private:
-		int red,green,blue;
-		float factorDeNacimiento,factorDeMortalidad;
-		Celula celula;
-	public:
-		/*
-		 * PRE:Parcela vacia,CREA UN COEFICIENTE CUALQUIERA , HABRIA QUE IMPLEMENTARLO CIN RANDOM , MISMO LOS COLORES.
-		 * POST:Celula muerta.
-		 */
-		Parcela();
-		/*
-		 * PRE:
-		 * POST:Celula muerta.
-		 */
-		void celulaDarVida();
+private:
+	int red;
+	int green;
+	int blue;
+	float coeficienteDeNatalidad;
+	float coeficienteDeMortalidad;
+	Celula celula;
 
-		void yafu();
+public:
 
-		/*
-		 *
-		 */
-		void cargarDatos(int,int,int,float,float);
+	/*
+	 * Pre:
+	 * Post: Crea una parcela con sus colores y coeficientes en 0.
+	 */
+	Parcela();
+	/*
+	 * Pre:
+	 * Post: da vida a la celula que se encuentra en la parcela.
+	 */
+	void celulaDarVida();
+	/*
+	 * Pre:
+	 * Post: En el primer turno da vida a la celula que se encuentra en la parcela y le hereda sus colores.
+	 */
+	void celulaDarVidaPrimerTurno();
+	/*
+	 * Pre:
+	 * Post: Le da valores a los atributos de la parcela a traves de lo valores leidos del archivo.
+	 */
+	void cargarDatos(int red ,int green ,int blue ,float coeficienteDeMortalidad ,float coeficienteDeNatalidad);
+	/*
+	 * Pre:
+	 * Post:
+	 */
+	bool obtenerEstadoDeCelula();
+	/*
+	 * Pre:
+	 * Post:
+	 */
+	char obtenerChar();
 
-		/*
-		 * POST:Devuelve el promedio del color para algun nacimiento.
-		 */
-		float obtenerPromedioColor();
-		/*
-		 * POST:Dato para matriz , 34 viva , 44 muerta.
-		 */
-		void obtenerDatoEstadoDeCelula();
 
-		char obtenerChar();
+
 };
-
-} /* namespace std */
-
-
 
 
 #endif /* PARCELA_H_ */

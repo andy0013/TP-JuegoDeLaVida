@@ -12,7 +12,6 @@ using namespace std;
 
 Memoria::Memoria() {
 	this->rutaEntrada = "entrada.txt";
-
 }
 
 

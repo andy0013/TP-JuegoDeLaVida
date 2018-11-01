@@ -8,15 +8,18 @@
 #ifndef INTERACCION_H_
 #define INTERACCION_H_
 #include "Validador.h"
-namespace std {
+#include <string>
+
 
 class Interaccion {
 private:
 
-	Validador validar;
+	std::Validador validar;
 
 public:
 	Interaccion();
+
+	bool ingresarCelulasEnTablero(std::string nombreDelTablero);
 
 	char ingresarCelula();
 
@@ -27,6 +30,6 @@ public:
 	virtual ~Interaccion();
 };
 
-} /* namespace std */
+
 
 #endif /* INTERACCION_H_ */

@@ -7,22 +7,26 @@
 
 #ifndef SRC_MEMORIA_H_
 #define SRC_MEMORIA_H_
-
 #include <string>
 typedef std::string str;
 
-
-
 class Memoria {
+
 	private:
+
 		str rutaEntrada;
+
 	public:
+
+		/*
+	     * POST: inicializa la ruta de lectura del archivo.
+		 */
 		Memoria();
-
-		//Recibe la linea en cual leer , sabiendo que datos extraer
-		//Modifica los punteros de lector(En lector , si ven despues de cuando se llama esta funcion) estan pasados
-		//como direcciones de memoria obtiene los datos , luego de mandarlos al "constructor" los pierde.
-
+		/*
+		 * Recibe la linea en cual leer , y informacion de que leer.
+		 * Modifica las direcciones de memorias de Lector.
+		 * Luego de obtener la informacion y modificarla , la pierde.
+		 */
 		void obtenerDatoTablero(int iteraciones,str *nombre,int *fila,int *columna);
 
 		void obtenerDatoPortal(int iteraciones,str *nombre,int *fila,int *columna,char *tipoDePortal);

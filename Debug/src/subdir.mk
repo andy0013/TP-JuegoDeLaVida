@@ -4,30 +4,45 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../src/BuscadorDeDatos.cpp \
 ../src/Celula.cpp \
+../src/Contador.cpp \
+../src/ControlJuego.cpp \
+../src/CreadorDeLista.cpp \
 ../src/Interaccion.cpp \
 ../src/Lector.cpp \
+../src/Memoria.cpp \
+../src/ModificadorDeTablero.cpp \
 ../src/Parcela.cpp \
 ../src/Tablero.cpp \
+../src/Validador.cpp \
 ../src/testeo.cpp 
 
 OBJS += \
-./src/BuscadorDeDatos.o \
 ./src/Celula.o \
+./src/Contador.o \
+./src/ControlJuego.o \
+./src/CreadorDeLista.o \
 ./src/Interaccion.o \
 ./src/Lector.o \
+./src/Memoria.o \
+./src/ModificadorDeTablero.o \
 ./src/Parcela.o \
 ./src/Tablero.o \
+./src/Validador.o \
 ./src/testeo.o 
 
 CPP_DEPS += \
-./src/BuscadorDeDatos.d \
 ./src/Celula.d \
+./src/Contador.d \
+./src/ControlJuego.d \
+./src/CreadorDeLista.d \
 ./src/Interaccion.d \
 ./src/Lector.d \
+./src/Memoria.d \
+./src/ModificadorDeTablero.d \
 ./src/Parcela.d \
 ./src/Tablero.d \
+./src/Validador.d \
 ./src/testeo.d 
 
 

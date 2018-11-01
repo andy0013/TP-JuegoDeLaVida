@@ -8,34 +8,35 @@
 #include <fstream>
 #include "Lector.h"
 #include <iostream>
-namespace std {
+using namespace std;
 
 Lector::Lector(){
 	this->rutaEntrada = "entrada.txt";
 
 }
 
-void Lector::leerNotasTablero() {
+Lista<Tablero*>* Lector::leerNotasTablero() {
+	cout<<"Leyendo archivo."<<endl;
+	cout<<"Leyendo archivo.."<<endl;
+	cout<<"Leyendo archivo..."<<endl;
 	std::ifstream archivo;
 	archivo.open(this->rutaEntrada.c_str());
 	int fila,columna,rojo,verde,azul;
 	float mortalidad,natalidad;
 	str nombre;
 	char tipoDePortal;
-	char linea [100];
+	char lineaLeida [100];
 	int numeroDeLineas = 0;
 	while(!archivo.eof()){
 		int blancos;
-		archivo.getline(linea,sizeof(linea));
-		blancos = interpretarInformacion(linea);
+		archivo.getline(lineaLeida,sizeof(lineaLeida));
+		blancos = cantidadDeBlancos(lineaLeida);
 		Memoria datosLeidos;
 
 		switch(blancos){
 			case 2:{
 				datosLeidos.obtenerDatoTablero(numeroDeLineas,&nombre,&fila,&columna);
-
-				this->filtro.agregarTablero(nombre,fila,columna);
-				this->filtro.iniciarTableros(nombre);
+				this->creador.agregarTablero(nombre,fila,columna);
 			}
 				break;
 			case 3:{
@@ -46,17 +47,19 @@ void Lector::leerNotasTablero() {
 
 			case 7:{
 				datosLeidos.obtenerDatoParcela(numeroDeLineas,&nombre,&fila,&columna,&rojo,&verde,&azul,&mortalidad,&natalidad);
-				this->filtro.cargarDatosEnParcela(nombre,(fila-1),(columna-1),rojo,verde,azul,natalidad,mortalidad);
+				this->creador.cargarDatosEnParcela(nombre,(fila-1),(columna-1),rojo,verde,azul,natalidad,mortalidad);
 			}
 				break;
 		}
 		numeroDeLineas++;
 	}
 	archivo.close();
-	this->filtro.mostrarTableros();
+
+	Lista<Tablero*>* listaCreada = this->creador.obtenerListaCreada();
+	return listaCreada;
 }
 
-int Lector::interpretarInformacion(char oracion[100]){
+int Lector::cantidadDeBlancos(char oracion[100]){
 	int blancos =0;
 	int letra = 0;
 	while(oracion[letra]!='\0'){
@@ -67,5 +70,5 @@ int Lector::interpretarInformacion(char oracion[100]){
 	}
 	return blancos;
 }
-}
+
 /* namespace std */

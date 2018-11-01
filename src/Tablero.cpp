@@ -1,18 +1,23 @@
+/*
+ * Tablero.cpp
+ *
+ *  Created on: 31 oct. 2018
+ *      Author: leandro
+ */
 
-#include <iostream>
 #include "Tablero.h"
+
 using namespace std;
 
-
-Tablero::Tablero(std::string nombre,int numFilas,int numColumnas) {
+Tablero::Tablero(std::string nombre,int numeroDeFilas,int numeroDeColumnas) {
 
 	this->nombreTablero = nombre;
 
-	this->celulasVivas = 0;
+	this->cantidadCelulasIniciales = 0;
 
-	this->numeroDeFilas = numFilas;
+	this->numeroDeFilas = numeroDeFilas;
 
-	this->numeroDeColumnas = numColumnas;
+	this->numeroDeColumnas = numeroDeColumnas;
 
 	this->matriz = new Parcela*[this->numeroDeFilas];
 
@@ -22,22 +27,28 @@ Tablero::Tablero(std::string nombre,int numFilas,int numColumnas) {
 	}
 }
 
+
 std::string Tablero::obtenerNombreTablero(){
 	return this->nombreTablero;
 }
 
-void Tablero::iniciarParcelas(int fila,int columna,int r,int g,int b,float mort,float nat){
-	this->matriz[fila][columna].cargarDatos(r,g,b,mort,nat);
+
+void Tablero::mostrarTablero(){
+	for(int i = 0 ; i < this->numeroDeFilas ; i++ ){
+
+		for(int j = 0 ; j < this->numeroDeColumnas ; j++ ){
+
+			cout << this->matriz[i][j].obtenerChar();
+		}
+	cout << endl;
+	}
 }
 
-void Tablero::crearCelulas(int fila,int columna){
 
-	this->matriz[fila][columna].celulaDarVida();
+void Tablero::iniciarParcelas(int fila, int columna, int red, int green, int blue, float coeficienteDeNatalidad, float coeficienteDeMortalidad){
+	this->matriz[fila][columna].cargarDatos(red, green, blue, coeficienteDeMortalidad, coeficienteDeNatalidad);
 }
 
-void Tablero::devolverDatosParcela(int fila,int columna){
-	this->matriz[fila][columna].yafu();
-}
 
 void Tablero::iniciarCelulas(){
 	int fila,columna;
@@ -51,32 +62,55 @@ void Tablero::iniciarCelulas(){
 
 		this->crearCelulas(fila,columna);
 
-		this->celulasVivas++;
+		this->cantidadCelulasIniciales++;
 
 		respuesta = consola.ingresarCelula();
 
 	}while(respuesta == 'S');
 }
 
-void Tablero::mostrarTableroDeJuego(){
-	for(int i = 0 ; i < this->numeroDeFilas ; i++ ){
 
-		for(int j = 0 ; j < this->numeroDeColumnas ; j++ ){
+void Tablero::crearCelulas(int fila,int columna){
 
-			cout << this->matriz[i][j].obtenerChar();
-		}
-	cout << endl;
-	}
+	this->matriz[fila][columna].celulaDarVidaPrimerTurno();
 }
+
+int Tablero::obtenerFilasTablero(){
+
+	return numeroDeFilas;
+
+}
+
+int Tablero::obtenerColumnasTablero(){
+
+	return numeroDeColumnas;
+
+}
+
+Parcela** Tablero::obtenerMatrizDelTablero(){
+
+	return this->matriz;
+}
+
 
 Tablero::~Tablero() {
-	for(int i = 0 ; i <= this->numeroDeFilas ; i++ ){
+	//for(int i = 0 ; i <= this->numeroDeFilas ; i++ ){
 
-			delete [] this->matriz[i];
-	}
+				//delete [] this->matriz[i];
+		//}
 
-	delete [] this->matriz;
+		delete [] this->matriz;
 }
+
+
+
+unsigned int Tablero::obtenerCelulasVivasIniciales(){
+    return this->cantidadCelulasIniciales;
+}
+
+
+
+
 
 
 
