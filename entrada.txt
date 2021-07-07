@@ -21,4 +21,4 @@ LinkinPark 1 1 145 156 22 0.2 0.9
 LinkinPark 2 1 45 156 33 0.2 0.8
 LinkinPark 2 2 68 156 44 0.3 0.7
 LinkinPark 3 1 90 115 55 0.4 0.6
-LinkinPark 3 2 90 156 66 0.5 0.
+LinkinPark 3 2 90 156 66 0.5 0.5
